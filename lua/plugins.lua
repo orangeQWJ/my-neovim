@@ -16,7 +16,7 @@ packer.startup({
 		-- onedark
 		use("ful1e5/onedark.nvim")
 		-------------------------------------------------------
-		-- nvim-tree 侧边栏 
+		-- nvim-tree 侧边栏
 		use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
 		-- bufferline 顶栏
 		--use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
@@ -28,18 +28,28 @@ packer.startup({
 		-- telescope 插件
 		use("LinArcX/telescope-env.nvim")
 		-- dashboard-nvim
-		-- use("glepnir/dashboard-nvim")
+		--[[use {
+			'nvimdev/dashboard-nvim',
+			event = 'VimEnter',
+			config = function()
+				require('dashboard').setup {
+					-- config
+				}
+			end,
+			requires = { 'nvim-tree/nvim-web-devicons' }
+		}
+		]]
 		-- Telescope project插件
 		use("ahmedkhalf/project.nvim")
 		-- treesitter
 		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 		-- 中文帮助文档
-		use({'yianwillis/vimcdoc', event = 'VimEnter'})
+		use({ 'yianwillis/vimcdoc', event = 'VimEnter' })
 		-- coc-nvim
-        use { 'neoclide/coc.nvim', branch = 'release' }
+		use { 'neoclide/coc.nvim', branch = 'release' }
 
 		-- 开屏工具
-		use {'mhinz/vim-startify'}
+		use { 'mhinz/vim-startify' }
 		-- 浮动终端
 		use { 'voldikss/vim-floaterm' }
 
@@ -47,6 +57,26 @@ packer.startup({
 		use("lukas-reineke/indent-blankline.nvim")
 		-- 飞雷神
 		use('easymotion/vim-easymotion')
+
+		--------------------- Markdown --------------------
+		use("ixru/nvim-markdown")
+		--use {
+		--'renerocksai/telekasten.nvim',
+		--requires = { 'nvim-telescope/telescope.nvim' }
+		--}
+		--ChatGPT
+		use({
+			"jackMort/ChatGPT.nvim",
+			config = function()
+				require("chatgpt").setup()
+			end,
+			requires = {
+				"MunifTanjim/nui.nvim",
+				"nvim-lua/plenary.nvim",
+				"folke/trouble.nvim",
+				"nvim-telescope/telescope.nvim"
+			}
+		})
 
 
 		--------------------- LSP --------------------
@@ -64,7 +94,7 @@ packer.startup({
 		--use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
 		--use("hrsh7th/cmp-path") -- { name = 'path' }
 		--use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
---
+		--
 		-- 常见编程语言代码段
 		--use("rafamadriz/friendly-snippets")
 		-- 补全图标

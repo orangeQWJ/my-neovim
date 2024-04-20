@@ -46,7 +46,43 @@ map("n", "s=", "<C-w>=", opt)
 map("i", "jk", "<ESC>`^", opt)
 map("i", "zz", "<ESC>zza", opt)
 map("i", "<C-l>", "<ESC>la", opt)
-map("i", "<C-a>", "<ESC>A", opt)
+--map("i", "<C-a>", "<ESC>A", opt)
+--map("i", "<C-k>", "<Up>", opt)
+--map("i", "<C-j>", "<Down>", opt)
+--map("i", "<C-l>", "<Right>", opt)
+--map("i", "<C-i>", "<Left>", opt)
+map("n", "<leader>0", ":vsplit hint.md <CR>", opt)
+--
+----[[
+--sdkfjsdfkj]]
+--sdkkrfdfkj]]
+--sdkfjsdfkj]]
+--sdkfjsdfkj]]
+--sdkfjsdfkj]]
+--
+--local function switch_to_english()
+--    os.execute("osascript /Users/orange/.config/nvim/switch_to_english.scpt")
+--end
+---- 在正常模式下，按下 Ctrl + i 进入插入模式并执行脚本
+--vim.api.nvim_set_keymap('n', '<C-i>', '', {
+--    noremap = true, 
+--    silent = true, 
+--    callback = function()
+--        switch_to_english()
+--        vim.api.nvim_command('startinsert')
+--    end
+--})
+--
+---- 在插入模式下，按下 Ctrl + i 返回正常模式并执行脚本
+--vim.api.nvim_set_keymap('i', '<C-i>', '', {
+--    noremap = true, 
+--    silent = true, 
+--    callback = function()
+--        switch_to_english()
+--        vim.api.nvim_command('stopinsert')
+--    end
+--})
+
 --------------------------------------------------------------------------------
 --插件相关配置
 
@@ -134,31 +170,44 @@ vim.g.floaterm_height = 0.85
 vim.g.floaterm_title = "$1|$2"
 
 
---map("t", "<C-f>h", [[<C-\><C-N> :FloatermHide <CR>]], opt)
---map("t", "<C-f>p", [[<C-\><C-N> :FloatermPrev <CR>]], opt)
---map("t", "<C-f>n", [[<C-\><C-N> :FloatermNext <CR>]], opt)
---map("t", "<C-f>x", [[<C-\><C-N> :FloatermKill <CR>]], opt)
---map("t", "<C-f>0", [[<C-\><C-N> :FloatermUpdate --width=0.4 --hight=0.6<CR>]], opt)
---map("t", "<C-f>5", [[<C-\><C-N> :FloatermUpdate --width=0.5 <CR>]], opt)
---map("t", "<C-f>6", [[<C-\><C-N> :FloatermUpdate --width=0.6 <CR>]], opt)
+map("t", "<C-i>h", [[<C-\><C-N> :FloatermHide <CR>]], opt)
+map("t", "<C-i>p", [[<C-\><C-N> :FloatermPrev <CR>]], opt)
+map("t", "<C-i>n", [[<C-\><C-N> :FloatermNext <CR>]], opt)
+--map("t", "<C-h>x", [[<C-\><C-N> :FloatermKill <CR>]], opt)
+map("t", "<C-i>c", [[<C-\><C-N> :FloatermNew <CR>]], opt)
 
---map("t", "<C-f>h3", [[<C-\><C-N> :FloatermUpdate --height=0.3 <CR>]], opt)
---map("t", "<C-f>h4", [[<C-\><C-N> :FloatermUpdate --height=0.4 <CR>]], opt)
---map("t", "<C-f>h5", [[<C-\><C-N> :FloatermUpdate --height=0.5 <CR>]], opt)
---map("t", "<C-f>h6", [[<C-\><C-N> :FloatermUpdate --height=0.6 <CR>]], opt)
---map("t", "<C-f>h7", [[<C-\><C-N> :FloatermUpdate --height=0.7 <CR>]], opt)
---map("t", "<C-f>h8", [[<C-\><C-N> :FloatermUpdate --height=0.8 <CR>]], opt)
---map("t", "<C-f>h9", [[<C-\><C-N> :FloatermUpdate --height=0.9 <CR>]], opt)
---map("t", "<C-f>h1", [[<C-\><C-N> :FloatermUpdate --height=0.99 <CR>]], opt)
-map("n", "<leader>2", ":FloatermNew <CR>", opt)
-map("n", "<leader>3", ":FloatermShow <CR>", opt)
-map("n", "<leader>4", ":FloatermHide <CR>", opt)
+--map("t", "<C-h>0", [[<C-\><C-N> :FloatermUpdate --width=0.4 --hight=0.85<CR>]], opt)
 
-map("n", "<leader>5", ":FloatermSend <CR>", opt)
+--map("t", "<C-h>p3", [[<C-\><C-N> :FloatermUpdate --width=0.3 <CR>]], opt)
+--map("t", "<C-h>p4", [[<C-\><C-N> :FloatermUpdate --width=0.4 <CR>]], opt)
+--map("t", "<C-h>p5", [[<C-\><C-N> :FloatermUpdate --width=0.5 <CR>]], opt)
+--map("t", "<C-h>p6", [[<C-\><C-N> :FloatermUpdate --width=0.6 <CR>]], opt)
+--map("t", "<C-h>p7", [[<C-\><C-N> :FloatermUpdate --width=0.7 <CR>]], opt)
+--map("t", "<C-h>p8", [[<C-\><C-N> :FloatermUpdate --width=0.8 <CR>]], opt)
+--map("t", "<C-h>p9", [[<C-\><C-N> :FloatermUpdate --width=0.9 <CR>]], opt)
+--map("t", "<C-h>p1", [[<C-\><C-N> :FloatermUpdate --width=0.99 <CR>]], opt)
+--
+--map("t", "<C-h>v3", [[<C-\><C-N> :FloatermUpdate --height=0.3 <CR>]], opt)
+--map("t", "<C-h>v4", [[<C-\><C-N> :FloatermUpdate --height=0.4 <CR>]], opt)
+--map("t", "<C-h>v5", [[<C-\><C-N> :FloatermUpdate --height=0.5 <CR>]], opt)
+--map("t", "<C-h>v6", [[<C-\><C-N> :FloatermUpdate --height=0.6 <CR>]], opt)
+--map("t", "<C-h>v7", [[<C-\><C-N> :FloatermUpdate --height=0.7 <CR>]], opt)
+--map("t", "<C-h>v8", [[<C-\><C-N> :FloatermUpdate --height=0.8 <CR>]], opt)
+--map("t", "<C-h>v9", [[<C-\><C-N> :FloatermUpdate --height=0.9 <CR>]], opt)
+--map("t", "<C-h>v1", [[<C-\><C-N> :FloatermUpdate --height=0.99 <CR>]], opt)
+map("n", "<leader>1", ":FloatermNew <CR>", opt)
+--map("n", "<leader>2", ":FloatermNext <CR>", opt)
+map("n", "<leader>9", ":FloatermShow <CR>", opt)
+--map("n", "<leader>4", ":FloatermHide <CR>", opt)
+-- map("n", "<leader>5", ":FloatermSend <CR>", opt)
 
-map("n", "<leader>A", ":FloatermNew python3 ~/.config/nvim/AI.py   <CR>", opt)
-map("n", "<leader>R", ":FloatermNew python3 ~/.config/nvim/AI.py % <CR>", opt)
-map("n", "<leader>1", ":FloatermNew python3 ~/.config/nvim/AI_ONE_QUESTION.py % <CR>", opt)
+--map("n", "<leader>A", ":FloatermNew python3 ~/.config/nvim/AI.py   <CR>", opt)
+--map("n", "<leader>R", ":FloatermNew python3 ~/.config/nvim/AI.py % <CR>", opt)
+--map("n", "<leader>1", ":FloatermNew python3 ~/.config/nvim/AI_ONE_QUESTION.py % <CR>", opt)
+--
+--GPT
+map("n", "<leader>gt", ":ChatGPT <CR>", opt)
+map("n", "<leader>ge", ":ChatGPTEditWithInstructions <CR>", opt)
 
 -- 格式化c/c++
 pcall(
