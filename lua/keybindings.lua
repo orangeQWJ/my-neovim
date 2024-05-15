@@ -27,8 +27,6 @@ map("t", "<C-w>j", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<C-w>k", [[ <C-\><C-N><C-w>k ]], opt)
 map('t', '<C-n>', "<Tab>", opt)
 
--- 重新加载配置文件
-map("n", "<Leader>q", ":source $MYVIMRC <CR>", opt)
 -- 上下滚动浏览
 map("n", "<C-j>", "4j", opt)
 map("n", "<C-k>", "4k", opt)
@@ -54,6 +52,7 @@ map('i', '<C-s>', "<Left>", opt)
 map('i', '<C-i>', "<CR>", opt)
 map("i", "<C-e>", "<ESC>A", opt)
 map("i", "<C-a>", "<ESC>I", opt)
+map("i", "<Tab>", "<Tab>", opt)
 --vim.keymap.set('i', '<C-j>', "-", {noremap = true, silent = true})
 --vim.keymap.set('i', '<C-k>', "+", {noremap = true, silent = true})
 --vim.keymap.set('i', '<C-i>', "=", {noremap = true, silent = true})
