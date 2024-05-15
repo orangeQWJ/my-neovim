@@ -59,7 +59,7 @@ packer.startup({
 		use('easymotion/vim-easymotion')
 
 		--------------------- Markdown --------------------
-		use("ixru/nvim-markdown")
+	    use("ixru/nvim-markdown")
 		--use {
 		--'renerocksai/telekasten.nvim',
 		--requires = { 'nvim-telescope/telescope.nvim' }

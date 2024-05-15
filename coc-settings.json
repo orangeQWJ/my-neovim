@@ -34,6 +34,7 @@
     "git.topRemovedSign.hlGroup": "GitGutterDelete",
     "git.changeRemovedSign.hlGroup": "GitGutterDelete",
     "git.enableGutters": true,
+    "markdown-preview-enhanced.breakOnSingleNewLine": true,
     //"git.changedSign.text": "┃",
     //"git.addedSign.text": "┃",
     //"git.removedSign.text": "▁",

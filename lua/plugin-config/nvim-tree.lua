@@ -163,13 +163,18 @@ nvim_tree.setup({
 		},
 	},
 	filters = {
-		git_ignored = true,
+	--	git_ignored = true,
+	--	-- 隐藏隐藏文件
+	--	dotfiles = true,
+	--	git_clean = false,
+	--	no_buffer = false,
+	--	custom = {},
+	--	exclude = {},
+	},
+	filters = {
+		git_ignored = false,
 		-- 隐藏隐藏文件
 		dotfiles = true,
-		git_clean = false,
-		no_buffer = false,
-		custom = {},
-		exclude = {},
 	},
 	filesystem_watchers = {
 		enable = true,
