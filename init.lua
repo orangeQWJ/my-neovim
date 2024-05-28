@@ -10,7 +10,7 @@ require("colorscheme")
 require("plugin-config.nvim-tree")
 -- 底部状态栏设置
 require("plugin-config.lualine")
--- 模糊查找文件
+-- 模糊查找
 require("plugin-config.telescope")
 -- 更好的语法增强
 require("plugin-config.nvim-treesitter")
@@ -18,7 +18,7 @@ require("plugin-config.nvim-treesitter")
 require("plugin-config.indent-blankline")
 --neorim-markdown
 require("plugin-config.neovim-markdown")
--- coc.nvim
+-- 补全coc.nvim
 require("coc")
 -- 一些自动命令
 require("autoCmd")
@@ -26,7 +26,8 @@ require("autoCmd")
 require("app")
 -- 尝试性键位绑定
 require("temp_keybind")
-
+-- rainbow
+--require("plugin-config.rainbow")
 -- 开屏导航
 --require("plugin-config.dashboard")
 -- 项目插件
@@ -34,3 +35,6 @@ require("temp_keybind")
 -- 添加标签栏
 --require("plugin-config.bufferline")
 require("keybindings")
+
+
+vim.o.foldlevel = 99

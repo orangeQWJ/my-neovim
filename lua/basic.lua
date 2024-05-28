@@ -76,3 +76,11 @@ vim.o.pumheight = 10
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 --vim.o.showmode = false
 vim.opt.numberwidth=1
+
+
+vim.o.foldlevel = 99
+-- 启用自动折叠（基于缩进）
+vim.opt.foldmethod = 'manual'
+
+-- 禁用折叠
+vim.opt.foldenable = false

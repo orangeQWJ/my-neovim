@@ -111,4 +111,13 @@ local function CompileRunGcc()
 end
 
 -- 设置键映射
-vim.keymap.set('n', '<leader>x', CompileRunGcc, {desc = "一键运行"})
+--vim.keymap.set('n', '<leader>x', CompileRunGcc, {desc = "一键运行"})
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+--------------------------------------------------------------------------------
+-- 为了配置更清晰干练
+local map = vim.api.nvim_set_keymap
+-- 复用 opt 参数
+local opt = { noremap = true, silent = true }
+map("n", "<leader>x", ":!python3 % <CR>", opt)

@@ -8,3 +8,8 @@ augroup MyAutoCmds
 
 augroup END
 ]]
+-- 仅在 Markdown 文件中设置自动换行
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  command = "setlocal textwidth=80 formatoptions+=t"
+})

@@ -17,8 +17,8 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 -- Terminal相关
 map("n", "<leader>t", ":sp | set nonumber | set signcolumn=no | terminal <CR>i", opt)
 map("n", "<leader>vt", ":vsp | set nonumber  | set signcolumn=no | terminal <CR>i", opt)
-map("n", "<leader>vd", ":vsp | set nonumber  | set signcolumn=no | terminal  ipython3 -m ipdb " .. vim.fn.expand('%') .. "<CR>", opt)
-map("n", "<leader>ve", ":vsp | set nonumber  | set signcolumn=no | terminal  ipython3 " .. vim.fn.expand('%') .. "<CR>", opt)
+map("n", "<leader>vd", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 -m ipdb " .. vim.fn.expand('%') .. "<CR>", opt)
+map("n", "<leader>ve", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 " .. vim.fn.expand('%') .. "<CR>", opt)
 
 map("t", "<C-k>", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<C-w>h", [[ <C-\><C-N><C-w>h ]], opt)
@@ -49,7 +49,6 @@ map("i", "zz", "<ESC>zza", opt)
 map("i", "<C-l>", "<Right>", opt)
 map('i', '<C-f>', "<Right>", opt)
 map('i', '<C-s>', "<Left>", opt)
-map('i', '<C-i>', "<CR>", opt)
 map("i", "<C-e>", "<ESC>A", opt)
 map("i", "<C-a>", "<ESC>I", opt)
 map("i", "<Tab>", "<Tab>", opt)
@@ -58,6 +57,7 @@ map("i", "<Tab>", "<Tab>", opt)
 --vim.keymap.set('i', '<C-i>', "=", {noremap = true, silent = true})
 
 map("n", "<leader>0", ":vsplit hint.md <CR>", opt)
+map("n", "<leader>9", ":vsplit " .. vim.fn.expand("%:p:r") .. ".md" .."<CR>", opt)
 map('n', '<leader>y', ':%y+<CR>', opt)
 
 --------------------------------------------------------------------------------

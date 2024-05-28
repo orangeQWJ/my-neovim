@@ -59,11 +59,16 @@ packer.startup({
 		use('easymotion/vim-easymotion')
 
 		--------------------- Markdown --------------------
-	    use("ixru/nvim-markdown")
+		use("ixru/nvim-markdown")
 		--use {
 		--'renerocksai/telekasten.nvim',
 		--requires = { 'nvim-telescope/telescope.nvim' }
 		--}
+		--
+		--use("HiPhish/nvim-ts-rainbow2")
+		use("HiPhish/rainbow-delimiters.nvim")
+
+
 		--ChatGPT
 		use({
 			"jackMort/ChatGPT.nvim",
@@ -77,7 +82,6 @@ packer.startup({
 				"nvim-telescope/telescope.nvim"
 			}
 		})
-
 
 		--------------------- LSP --------------------
 		-- 用于方便安装各类语言LSP服务端
