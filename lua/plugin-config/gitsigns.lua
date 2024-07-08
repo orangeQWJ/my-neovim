@@ -1,7 +1,6 @@
 require('gitsigns').setup {
   signs = {
     add          = { text = '┃' },
-		---/ksdjfj
     change       = { text = '┃' },
     delete       = { text = '_' },
     topdelete    = { text = '‾' },
