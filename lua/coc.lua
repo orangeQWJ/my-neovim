@@ -14,7 +14,7 @@ vim.g.coc_global_extensions = {
 	'coc-prettier',
 	'coc-snippets', 'coc-pairs', 'coc-word',
 	'coc-translator',
-	'coc-git',
+	--'coc-git',
 	'coc-highlight',
 	'coc-rls',
 

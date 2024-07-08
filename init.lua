@@ -14,8 +14,10 @@ require("plugin-config.lualine")
 require("plugin-config.telescope")
 -- 更好的语法增强
 require("plugin-config.nvim-treesitter")
+-- rainbow
+require("plugin-config.rainbow")
 -- 缩进提示线
-require("plugin-config.indent-blankline")
+--require("plugin-config.indent-blankline")
 --neorim-markdown
 require("plugin-config.neovim-markdown")
 -- 补全coc.nvim
@@ -26,6 +28,8 @@ require("autoCmd")
 require("app")
 -- 尝试性键位绑定
 require("temp_keybind")
+-- gitsigns
+require("plugin-config.gitsigns")
 -- rainbow
 --require("plugin-config.rainbow")
 -- 开屏导航
@@ -35,6 +39,4 @@ require("temp_keybind")
 -- 添加标签栏
 --require("plugin-config.bufferline")
 require("keybindings")
-
-
-vim.o.foldlevel = 99
+--vim.o.foldlevel = 99

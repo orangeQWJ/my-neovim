@@ -16,7 +16,9 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- Terminal相关
 map("n", "<leader>t", ":sp | set nonumber | set signcolumn=no | terminal <CR>i", opt)
+map("n", "<leader>ct", ":sp | set nonumber | set signcolumn=no | execute 'lcd ' . expand('%:p:h') . ' | terminal' <CR>i", opt)
 map("n", "<leader>vt", ":vsp | set nonumber  | set signcolumn=no | terminal <CR>i", opt)
+map("n", "<leader>vct", ":vsp | set nonumber | set signcolumn=no | execute 'lcd ' . expand('%:p:h') . ' | terminal' <CR>i", opt)
 map("n", "<leader>vd", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 -m ipdb " .. vim.fn.expand('%') .. "<CR>", opt)
 map("n", "<leader>ve", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 " .. vim.fn.expand('%') .. "<CR>", opt)
 
@@ -43,7 +45,8 @@ map("n", "sk", ":resize -5<CR>", opt)
 map("n", "s=", "<C-w>=", opt)
 
 -- 个人偏好
-map("i", "jk", "<ESC>`^", opt)
+--map("i", "jk", "<ESC>`^", opt)
+map("i", "<C-k>", "<ESC>`^", opt)
 map("i", "zz", "<ESC>zza", opt)
 -- 插入模式下光标移动
 map("i", "<C-l>", "<Right>", opt)
@@ -57,8 +60,24 @@ map("i", "<Tab>", "<Tab>", opt)
 --vim.keymap.set('i', '<C-i>', "=", {noremap = true, silent = true})
 
 map("n", "<leader>0", ":vsplit hint.md <CR>", opt)
-map("n", "<leader>9", ":vsplit " .. vim.fn.expand("%:p:r") .. ".md" .."<CR>", opt)
+--map("n", "<leader>9", ":vsplit " .. vim.fn.expand("%:p:r") .. ".md" .."<CR>", opt)
 map('n', '<leader>y', ':%y+<CR>', opt)
+-- 设置快捷键 <leader>9
+vim.api.nvim_set_keymap('n', '<leader>9', [[:lua OpenMdFile()<CR>]], { noremap = true, silent = true })
+
+-- 定义 OpenMdFile 函数
+function OpenMdFile()
+    -- 获取当前文件的完整路径
+    local current_file_path = vim.fn.expand('%:p')
+    -- 获取当前文件的目录路径
+    local current_file_dir = vim.fn.expand('%:p:h')
+    -- 获取当前文件的名字（不包括扩展名）
+    local current_file_name = vim.fn.expand('%:t:r')
+    -- 生成新的文件路径
+    local new_file_path = current_file_dir .. '/' .. current_file_name .. '.md'
+    -- 打开新的文件
+    vim.cmd('vsplit ' .. new_file_path)
+end
 
 --------------------------------------------------------------------------------
 --插件相关配置

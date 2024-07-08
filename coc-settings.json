@@ -1,61 +1,63 @@
 {
-    "python.formatting.provider": "autopep8",
-    "python.formatting.autopep8Path": "/Users/orange/Library/Python/3.9/bin/autopep8",
-    //    "hover.floatConfig": { "border": true, "rounded": true, "focusable": true },
-    //    "suggest.floatConfig": { "border": true, "rounded": true },
-    //    "diagnostic.floatConfig": { "border": true, "rounded": true },
-    //    "signature.floatConfig": { "border": true, "rounded": true },
-    "outline.autoPreview": true,
-    "notification.disabledProgressSources": ["*"],
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Path": "/Users/orange/Library/Python/3.9/bin/autopep8",
+  //    "hover.floatConfig": { "border": true, "rounded": true, "focusable": true },
+  //    "suggest.floatConfig": { "border": true, "rounded": true },
+  //    "diagnostic.floatConfig": { "border": true, "rounded": true },
+  //    "signature.floatConfig": { "border": true, "rounded": true },
+  "outline.autoPreview": true,
+  "notification.disabledProgressSources": ["*"],
 
-	// 错误提示符号
-    "diagnostic.signOffset": 1,
-    "diagnostic.errorSign": "┃",
-    "diagnostic.warningSign": "┃",
-    "diagnostic.infoSign": "┃",
-    "diagnostic.hintSign": "┃",
+  // 错误提示符号
+  "diagnostic.signOffset": 1,
+  "diagnostic.errorSign": "┃",
+  "diagnostic.warningSign": "┃",
+  "diagnostic.infoSign": "┃",
+  "diagnostic.hintSign": "┃",
 
-    "inlayHint.enable": false,
-    "list.alignColumns": true,
-    "list.floatPreview": true,
-	// 括号补全插件
-    "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
-    "pairs.enableBackspace": true,
+  "inlayHint.enable": false,
+  "list.alignColumns": true,
+  "list.floatPreview": true,
+  // 括号补全插件
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "pairs.enableBackspace": true,
 
-	// 使用有道翻译
-    "translator.engines": ["youdao"],
+  // 使用有道翻译
+  "translator.engines": ["youdao"],
 
-	// 修改git提示符号
-    //"git.floatConfig": { "border": true, "rounded": true },
+  // 修改git提示符号
+  //"git.floatConfig": { "border": true, "rounded": true },
 
-    "git.addedSign.hlGroup": "GitGutterAdd",
-    "git.changedSign.hlGroup": "GitGutterChange",
-    "git.removedSign.hlGroup": "GitGutterDelete",
-    "git.topRemovedSign.hlGroup": "GitGutterDelete",
-    "git.changeRemovedSign.hlGroup": "GitGutterDelete",
-    "git.enableGutters": true,
-    "markdown-preview-enhanced.breakOnSingleNewLine": true,
-    "snippets.ultisnips.pythonPrompt": false,
-    //"git.changedSign.text": "┃",
-    //"git.addedSign.text": "┃",
-    //"git.removedSign.text": "▁",
-    //"git.topRemovedSign.text": "▔",
-    //"git.changeRemovedSign.text": "≃",
-    //"git.branchCharacter": "",
-    //"git.showCommitInFloating": true,
-    //"git.addGBlameToVirtualText": false,
-    //"git.addGBlameToBufferVar": true,
-    //"git.splitWindowCommand": "below 10sp",
+  "git.addedSign.hlGroup": "GitGutterAdd",
+  "git.changedSign.hlGroup": "GitGutterChange",
+  "git.removedSign.hlGroup": "GitGutterDelete",
+  "git.topRemovedSign.hlGroup": "GitGutterDelete",
+  "git.changeRemovedSign.hlGroup": "GitGutterDelete",
+  "git.enableGutters": true,
+  "markdown-preview-enhanced.breakOnSingleNewLine": true,
+  "snippets.ultisnips.pythonPrompt": false,
+  //"git.changedSign.text": "┃",
+  //"git.addedSign.text": "┃",
+  //"git.removedSign.text": "▁",
+  //"git.topRemovedSign.text": "▔",
+  //"git.changeRemovedSign.text": "≃",
+  //"git.branchCharacter": "",
+  //"git.showCommitInFloating": true,
+  //"git.addGBlameToVirtualText": false,
+  //"git.addGBlameToBufferVar": true,
+  //"git.splitWindowCommand": "below 10sp",
 
-
-    //"prettier": {
-    //    "tabWidth": 4,
-    //    "printWidth": 160,
-    //    "singleQuote": true,
-    //    "disableSuccessMessage": true,
-    //    "formatterPriority": 999
-    //},
-    //"git.enableGutters": true,
-    //"volar.takeOverMode.enabled": true,
-    //"Lua.telemetry.enable": true,
+  //"prettier": {
+  //    "tabWidth": 4,
+  //    "printWidth": 160,
+  //    "singleQuote": true,
+  //    "disableSuccessMessage": true,
+  //    "formatterPriority": 999
+  //},
+  //"git.enableGutters": true,
+  //"volar.takeOverMode.enabled": true,
+  //"Lua.telemetry.enable": true,
+  "leetcode.enable": true,
+  "leetcode.language": "python3", // 或者您喜欢的编程语言
+  "leetcode.filePath": "~/leetcode"
 }
