@@ -82,14 +82,14 @@ packer.startup({
 				"nvim-telescope/telescope.nvim"
 			}
 		})
-		--use({
-		--	"kdheepak/lazygit.nvim",
-		--	-- optional for floating window border decoration
-		--	requires = {
-		--		"nvim-lua/plenary.nvim",
-		--	},
-		--})
 		use("lewis6991/gitsigns.nvim")
+		use({
+			"kdheepak/lazygit.nvim",
+			-- optional for floating window border decoration
+			requires = {
+				"nvim-lua/plenary.nvim",
+			},
+		})
 
 		--------------------- LSP --------------------
 		-- 用于方便安装各类语言LSP服务端
