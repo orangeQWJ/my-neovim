@@ -102,6 +102,8 @@ map("n", "<leader>gs", ":Telescope git_status<CR>", opt)
 map("n", "<leader>gc", ":Telescope git_commits<CR>", opt)
 -- 查看 man 版主
 map("n", "<leader><C-m>", ":Telescope man_pages<CR>", opt)
+-- 查看剪贴板
+map("n", "<leader><C-r>", ":Telescope registers<CR>", opt)
 
 pluginKeys.telescopeList = {
 	i = {
