@@ -16,13 +16,13 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- Terminal相关
 map("n", "<leader>t", ":sp | set nonumber | set signcolumn=no | terminal <CR>i", opt)
-map("n", "<leader>ct", ":sp | set nonumber | set signcolumn=no | execute 'lcd ' . expand('%:p:h') . ' | terminal' <CR>i", opt)
+map("n", "<leader>ct", ":sp | set nonumber | set signcolumn=no | execute 'lcd ' . expand('%:p:h') . ' | terminal' <CR>i",
+	opt)
 map("n", "<leader>vt", ":vsp | set nonumber  | set signcolumn=no | terminal <CR>i", opt)
-map("n", "<leader>vct", ":vsp | set nonumber | set signcolumn=no | execute 'lcd ' . expand('%:p:h') . ' | terminal' <CR>i", opt)
-map("n", "<leader>vd", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 -m ipdb " .. vim.fn.expand('%') .. "<CR>", opt)
-map("n", "<leader>ve", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 " .. vim.fn.expand('%') .. "<CR>", opt)
+map("n", "<leader>vct",
+	":vsp | set nonumber | set signcolumn=no | execute 'lcd ' . expand('%:p:h') . ' | terminal' <CR>i", opt)
 
-map("t", "<C-k>", [[ <C-\><C-N><C-w>j ]], opt)
+--map("t", "<C-k>", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<C-w>h", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<C-w>l", [[ <C-\><C-N><C-w>l ]], opt)
 map("t", "<C-w>j", [[ <C-\><C-N><C-w>j ]], opt)
@@ -55,28 +55,23 @@ map('i', '<C-s>', "<Left>", opt)
 map("i", "<C-e>", "<ESC>A", opt)
 map("i", "<C-a>", "<ESC>I", opt)
 map("i", "<Tab>", "<Tab>", opt)
---vim.keymap.set('i', '<C-j>', "-", {noremap = true, silent = true})
---vim.keymap.set('i', '<C-k>', "+", {noremap = true, silent = true})
---vim.keymap.set('i', '<C-i>', "=", {noremap = true, silent = true})
 
-map("n", "<leader>0", ":vsplit hint.md <CR>", opt)
---map("n", "<leader>9", ":vsplit " .. vim.fn.expand("%:p:r") .. ".md" .."<CR>", opt)
+-- 复制当前buffer中的内容到系统剪贴板
 map('n', '<leader>y', ':%y+<CR>', opt)
--- 设置快捷键 <leader>9
-vim.api.nvim_set_keymap('n', '<leader>9', [[:lua OpenMdFile()<CR>]], { noremap = true, silent = true })
-
+map("n", "<leader>0", ":vsplit hint.md <CR>", opt)
+map('n', '<leader>9', [[:lua OpenMdFile()<CR>]], opt)
 -- 定义 OpenMdFile 函数
 function OpenMdFile()
-    -- 获取当前文件的完整路径
-    local current_file_path = vim.fn.expand('%:p')
-    -- 获取当前文件的目录路径
-    local current_file_dir = vim.fn.expand('%:p:h')
-    -- 获取当前文件的名字（不包括扩展名）
-    local current_file_name = vim.fn.expand('%:t:r')
-    -- 生成新的文件路径
-    local new_file_path = current_file_dir .. '/' .. current_file_name .. '.md'
-    -- 打开新的文件
-    vim.cmd('vsplit ' .. new_file_path)
+	-- 获取当前文件的完整路径
+	local current_file_path = vim.fn.expand('%:p')
+	-- 获取当前文件的目录路径
+	local current_file_dir = vim.fn.expand('%:p:h')
+	-- 获取当前文件的名字（不包括扩展名）
+	local current_file_name = vim.fn.expand('%:t:r')
+	-- 生成新的文件路径
+	local new_file_path = current_file_dir .. '/' .. current_file_name .. '.md'
+	-- 打开新的文件
+	vim.cmd('vsplit ' .. new_file_path)
 end
 
 --------------------------------------------------------------------------------
@@ -88,6 +83,7 @@ local pluginKeys = {}
 -- nvim-tree
 -- <leader> + m 键打开关闭tree
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
+map("n", "<leader>wf", ":NvimTreeFindFileToggle<CR>", opt)
 
 -- Telescope
 -- 查找文件
@@ -133,7 +129,7 @@ vim.g.floaterm_title = "$1|$2"
 map("t", "<C-i>h", [[<C-\><C-N> :FloatermHide <CR>]], opt)
 map("t", "<C-i>p", [[<C-\><C-N> :FloatermPrev <CR>]], opt)
 map("t", "<C-i>n", [[<C-\><C-N> :FloatermNext <CR>]], opt)
---map("t", "<C-i>x", [[<C-\><C-N> :FloatermKill <CR>]], opt)
+map("t", "<C-i>x", [[<C-\><C-N> :FloatermKill <CR>]], opt)
 map("t", "<C-i>c", [[<C-\><C-N> :FloatermNew <CR>]], opt)
 
 --map("t", "<C-h>0", [[<C-\><C-N> :FloatermUpdate --width=0.4 --hight=0.85<CR>]], opt)
@@ -155,15 +151,28 @@ map("t", "<C-i>c", [[<C-\><C-N> :FloatermNew <CR>]], opt)
 --map("t", "<C-h>v8", [[<C-\><C-N> :FloatermUpdate --height=0.8 <CR>]], opt)
 --map("t", "<C-h>v9", [[<C-\><C-N> :FloatermUpdate --height=0.9 <CR>]], opt)
 --map("t", "<C-h>v1", [[<C-\><C-N> :FloatermUpdate --height=0.99 <CR>]], opt)
-map("n", "<leader>1", ":FloatermNew <CR>", opt)
---map("n", "<leader>2", ":FloatermNext <CR>", opt)
-map("n", "<leader>2", ":FloatermShow <CR>", opt)
+--map("n", "<leader>1", ":FloatermNew <CR>", opt)
+map("n", "<leader>1", ":FloatermNew nvim %:p <CR>", opt)
+map("n", "<leader>2", ":FloatermNew <CR>", opt)
+map("n", "<leader>3", ":FloatermShow <CR>", opt)
 --map("n", "<leader>4", ":FloatermHide <CR>", opt)
 -- map("n", "<leader>5", ":FloatermSend <CR>", opt)
 
 --map("n", "<leader>A", ":FloatermNew python3 ~/.config/nvim/AI.py   <CR>", opt)
 --map("n", "<leader>R", ":FloatermNew python3 ~/.config/nvim/AI.py % <CR>", opt)
 --map("n", "<leader>1", ":FloatermNew python3 ~/.config/nvim/AI_ONE_QUESTION.py % <CR>", opt)
+function getFilePath()
+	-- 获取当前文件的完整路径
+	local current_file_path = vim.fn.expand('%:p')
+	-- 获取当前文件的目录路径
+	local current_file_dir = vim.fn.expand('%:p:h')
+	-- 获取当前文件的名字（不包括扩展名）
+	local current_file_name = vim.fn.expand('%:t:r')
+	-- 生成新的文件路径
+	local new_file_path = current_file_dir .. '/' .. current_file_name .. '.md'
+	-- 打开新的文件
+	vim.cmd('e ' .. new_file_path)
+end
 --
 --GPT
 map("n", "<leader>gt", ":ChatGPT <CR>", opt)

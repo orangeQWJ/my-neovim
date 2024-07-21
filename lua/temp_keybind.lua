@@ -9,3 +9,5 @@ map("n", "<leader>f", ":Format<CR>:w<CR>", opt)
 -- 在Neovim中按下Ctrl+q时调用外部脚本
 map('i', '<C-j>', '<Esc>:silent! !osascript ~/.config/nvim/apple/simulate_keys.scpt<CR>', opt)
 
+map("n", "<leader>vd", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 -m ipdb " .. vim.fn.expand('%') .. "<CR>", opt)
+map("n", "<leader>ve", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 " .. vim.fn.expand('%') .. "<CR>", opt)

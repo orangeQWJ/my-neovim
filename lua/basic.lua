@@ -42,7 +42,7 @@ vim.o.incsearch = true
 vim.o.autoread = true
 vim.bo.autoread = true
 -- 禁止折行
-vim.wo.wrap = false
+vim.wo.wrap = true
 -- 光标在行首尾时<Left><Right>可以跳到下一行
 vim.o.whichwrap = "<,>,[,]"
 -- 允许隐藏被修改过的buffer
