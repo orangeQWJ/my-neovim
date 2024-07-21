@@ -11,3 +11,22 @@ map('i', '<C-j>', '<Esc>:silent! !osascript ~/.config/nvim/apple/simulate_keys.s
 
 map("n", "<leader>vd", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 -m ipdb " .. vim.fn.expand('%') .. "<CR>", opt)
 map("n", "<leader>ve", ":vsp | set nonumber  | set signcolumn=no | terminal  python3 " .. vim.fn.expand('%') .. "<CR>", opt)
+
+-- 自动读取被外部更改的文件
+vim.opt.autoread = true
+
+-- 当获得焦点时自动更新缓冲区
+vim.api.nvim_create_autocmd({"FocusGained", "BufEnter"}, {
+  pattern = "*",
+  command = "checktime",
+})
+
+-- 显示提示信息
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_echo({{"File changed on disk. Buffer reloaded.", "WarningMsg"}}, false, {})
+  end,
+})
+
+map('n', '<leader>u', ':checktime<CR>', opt)
